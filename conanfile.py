@@ -10,7 +10,7 @@ class GPGErrorConan(ConanFile):
     name = "libgpg-error"
     version = "1.36"
     homepage = "https://gnupg.org/software/libgpg-error/index.html"
-    url = "http://github.com/DEGoodmanWilson/conan-libgpg-error"
+    url = "http://github.com/bincrafters/conan-libgpg-error"
     author = "Bincrafters <bincrafters@gmail.com>"
     topics = ("conan", "gpg", "gnupg")
     description = "Libgpg-error is a small library that originally defined common error values for all GnuPG " \
