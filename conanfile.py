@@ -142,6 +142,7 @@ typedef int ssize_t;
                     env_build = AutoToolsBuildEnvironment(self, win_bash=tools.os_info.is_windows)
                     if self._is_msvc:
                         env_build.defines.extend(["strncasecmp=_strnicmp", "strcasecmp=_stricmp"])
+                        env_build.flags.append("-FS")
                     env_build.configure(args=args, build=build, host=host)
                     env_build.make()
                     env_build.install()
