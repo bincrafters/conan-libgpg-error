@@ -109,6 +109,8 @@ typedef int ssize_t;
             args.extend(["--disable-static", "--enable-shared"])
         else:
             args.extend(["--disable-shared", "--enable-static"])
+        if self.settings.os == "Linux" and self.settings.arch == "x86":
+            host = "i686-linux-gnu"
 
         if self._is_msvc:
             env["_LINK_"] = "advapi32.lib"
