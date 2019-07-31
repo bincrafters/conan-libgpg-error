@@ -3,13 +3,6 @@ build: false
 environment:
     PYTHON_HOME: "C:\\Python37"
 
-    CONAN_USERNAME: "qtproject"
-    CONAN_LOGIN_USERNAME: "annulen"
-    CONAN_CHANNEL: "stable"
-    CONAN_UPLOAD: "https://api.bintray.com/conan/qtproject/conan"
-    CONAN_REMOTES: "https://api.bintray.com/conan/qtproject/conan, https://api.bintray.com/conan/bincrafters/public-conan"
-    CONAN_OPTIONS: "*:shared=True"
-
     matrix:
         - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
           CONAN_VISUAL_VERSIONS: 14
