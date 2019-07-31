@@ -10,7 +10,7 @@ class GPGErrorConan(ConanFile):
     name = "libgpg-error"
     version = "1.36"
     homepage = "https://gnupg.org/software/libgpg-error/index.html"
-    url = "http://github.com/DEGoodmanWilson/conan-libgpg-error"
+    url = "http://github.com/bincrafters/conan-libgpg-error"
     author = "Bincrafters <bincrafters@gmail.com>"
     topics = ("conan", "gpg", "gnupg")
     description = "Libgpg-error is a small library that originally defined common error values for all GnuPG " \
@@ -109,6 +109,8 @@ typedef int ssize_t;
             args.extend(["--disable-static", "--enable-shared"])
         else:
             args.extend(["--disable-shared", "--enable-static"])
+        if self.settings.os == "Linux" and self.settings.arch == "x86":
+            host = "i686-linux-gnu"
 
         if self._is_msvc:
             env["_LINK_"] = "advapi32.lib"
@@ -140,6 +142,7 @@ typedef int ssize_t;
                     env_build = AutoToolsBuildEnvironment(self, win_bash=tools.os_info.is_windows)
                     if self._is_msvc:
                         env_build.defines.extend(["strncasecmp=_strnicmp", "strcasecmp=_stricmp"])
+                        env_build.flags.append("-FS")
                     env_build.configure(args=args, build=build, host=host)
                     env_build.make()
                     env_build.install()
