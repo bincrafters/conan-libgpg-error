@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 from conans import ConanFile, AutoToolsBuildEnvironment, tools
 import os
 import shutil
@@ -11,7 +8,6 @@ class GPGErrorConan(ConanFile):
     version = "1.36"
     homepage = "https://gnupg.org/software/libgpg-error/index.html"
     url = "http://github.com/bincrafters/conan-libgpg-error"
-    author = "Bincrafters <bincrafters@gmail.com>"
     topics = ("conan", "gpg", "gnupg")
     description = "Libgpg-error is a small library that originally defined common error values for all GnuPG " \
                   "components."
@@ -35,6 +31,7 @@ class GPGErrorConan(ConanFile):
 
     def configure(self):
         del self.settings.compiler.libcxx
+        del self.settings.compiler.cppstd
 
     def config_options(self):
         if self.settings.os == "Windows":
