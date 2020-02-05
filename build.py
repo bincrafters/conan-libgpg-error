@@ -1,7 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
-import copy
-import platform
 
 from bincrafters import build_template_default
 
