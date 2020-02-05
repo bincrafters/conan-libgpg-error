@@ -122,7 +122,7 @@ typedef int ssize_t;
                 rc = "windres --target=pe-x86-64"
             automake_perldir = os.getenv('AUTOMAKE_PERLLIBDIR')
             if automake_perldir.startswith('/mnt/'):
-                automake_perldir = automake_perldir[4:]
+                automake_perldir = '/cygdrive/' + automake_perldir[5:]
             args.extend(["CC=%s/compile cl -nologo" % automake_perldir,
                          "LD=link",
                          "NM=dumpbin -symbols",
