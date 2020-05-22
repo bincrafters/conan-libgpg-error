@@ -27,7 +27,7 @@ class GPGErrorConan(ConanFile):
             if "CONAN_BASH_PATH" not in os.environ:
                 self.build_requires("cygwin_installer/2.9.0@bincrafters/stable")
         if self._is_msvc:
-            self.build_requires("automake/1.16.1")
+            self.build_requires("automake/1.16.2")
 
     def configure(self):
         del self.settings.compiler.libcxx
